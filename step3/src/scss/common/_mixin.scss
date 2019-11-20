@@ -1,0 +1,25 @@
+@mixin midCenterTransform ($x, $y) {
+	-webkit-transform:translate($x, $y);
+	transform:translate($x, $y);
+}
+
+@mixin ellipsis{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
+@mixin dummy{
+	display:inline-block;
+	overflow:hidden;
+	height:100%;
+	vertical-align:middle;
+	content:'';
+}
+@mixin clearfix{
+	&:after{
+		display:block;
+		clear:both;
+		content:'';
+	}
+}
