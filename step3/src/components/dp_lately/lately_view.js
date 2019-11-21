@@ -10,6 +10,7 @@ const LatelyView = ({children}) => {
       <div id="container">
         <div className="content">
           {children}
+          
         </div>
       </div>
       <Footer></Footer>

@@ -23,3 +23,32 @@
 		content:'';
 	}
 }
+
+@mixin rnded ($rndValue) {
+  -webkit-border-top-left-radius:$rndValue;
+  -webkit-border-top-right-radius:$rndValue;
+  -webkit-border-bottom-left-radius:$rndValue;
+  -webkit-border-bottom-right-radius:$rndValue;
+	border-top-left-radius:$rndValue;
+	border-top-right-radius:$rndValue;
+	border-bottom-left-radius:$rndValue;
+	border-bottom-right-radius:$rndValue;
+}
+
+@mixin u_tb{
+	display:table;
+	width:100%;
+	table-layout:fixed;
+}
+@mixin u_td{
+	display:table-cell;
+}
+
+
+@mixin sp_navi{
+  display:inline-block;
+  overflow:hidden;
+  background:url('../../img/sp_navi.png') no-repeat;
+  -webkit-background-size:166px auto;
+          background-size:166px auto;
+}

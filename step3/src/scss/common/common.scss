@@ -87,3 +87,110 @@
 	text-align:center;
 	@include clearfix;
 }
+
+.footer_wrap{
+  padding-bottom:8rem;background:$silver;font-size:1.1rem;color:$darkgray3;text-align:center;
+}
+.foot_norice{
+  margin-top:.8rem;background-color:$white;
+  .ico_notice{
+    display:inline-block;width:5.8rem;margin-right:.7rem;padding-top:.1rem;border:1px solid #7fd4ef;font-size:1.2rem;line-height:1.7rem;color:$point;text-align:center;
+    @include rnded(2rem);
+  }
+}
+.foot_btn{
+  margin-top:1rem;background-color:$gray4;
+  .tbl_type{
+    @include u_tb;
+    li{
+      display:table-cell;
+      &:first-child .btn_type{border-left:0;}
+    }
+    .btn_type{
+      display:block;padding-top:.2rem;font-size:1.4rem;line-height:3.6rem;color:$black;border-left:1px solid $gray3;
+    }
+  }
+}
+.foot_policy{
+  .lk_type{
+    color:$black;text-decoration:underline;
+  }
+  .foot_contact{
+    padding-top:1.6rem;margin-bottom:1.1rem;line-height:1.6rem;
+    p span:first-child{
+      position:relative;padding-right:1rem;
+      &:after{
+        position:absolute;top:50%;right:.4rem;width:1px;height:9px;margin-top:-4px;background-color:$gray4;content:'';
+      }
+    }
+  }
+  .foot_terms{
+    max-width:32rem;margin:0 auto 1.5rem;font-size:0;line-height:0;
+    li{
+      display:inline-block;margin:0 .4rem;font-size:1.1rem;line-height:1.8rem;
+    }
+  }
+  .copyright{
+    display:block;padding-top:.2rem;line-height:1.8rem;
+  }
+}
+
+/*하단 유틸 바*/
+.wrap_bar_util{
+	position:fixed;left:0;right:0;bottom:0;border-top:1px solid $gray1;background:$white;z-index:100;-webkit-transform:translate3d(0,0,0);
+}
+.bar_util{
+	@include u_tb;
+	li{
+		height:4rem;text-align:center;
+		@include u_td;
+	}
+	a,button{
+		display:block;width:100%;height:100%;font-size:0;
+		span{
+      @include sp_navi;
+			vertical-align:middle;font-size:5px;color:transparent;
+		}
+		&:after{
+			@include dummy;
+		}
+	}
+	.btn_home span{
+		width:24px;height:21px;
+	}
+	.btn_history_back span{
+		width:19px;height:18px;margin-top:1px;background-position:-26px 0;
+	}
+  .btn_history_back.is_none span{
+		background-position:-26px 0;background-position:-47px 0;
+	}
+  .btn_menu {
+    position:relative;z-index:20;height:40px;margin-top:-9px;user-select:none;
+    &:after{
+      @include sp_navi;
+      position:absolute;top:-3px;left:50%;z-index:5;width:40px;height:13px;margin-left:-20px;background-position:-126px 0;content:'';
+    }
+    span{
+      position:relative;z-index:10;width:38px;height:38px;background-position:0 -23px;
+    }
+  }
+	.btn_myzone span{
+		width:26px;height:25px;margin-top:2px;background-position:-68px 0;
+	}
+	.btn_latest_item span{
+		width:28px;height:28px;background-position:-96px 0;
+		img{
+			display:none;width:23px;height:23px;
+		}
+	}
+	.is_see{
+		span{
+			overflow:hidden;position:relative;
+			@include rnded(1px);
+			img{
+				display:block;position:absolute;left:1px;bottom:1px;
+				@include rnded(1px);
+			}
+		}
+	}
+}
