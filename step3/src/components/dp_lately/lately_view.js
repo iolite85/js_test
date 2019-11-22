@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../include/head';
 import Footer from '../include/foot';
+import '../../scss/common/layout.scss';
 
 
 const LatelyView = ({children}) => {

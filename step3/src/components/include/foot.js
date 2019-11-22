@@ -54,7 +54,7 @@ const Footer = () =>{
 					{/* [D] 최근 본 상품이 있는 경우 .btn_latest_item요소에 is_see 클래스 추가 */}
 					<a href="#none" className="btn_latest_item is_see" title="최근 본 상품으로 가기">
 						{/* [D] img 태그의 width/height 값 23으로 변경 */}
-						<span><img src={require('../../img/@temp_goods.jpg')} width="23" height="23" alt=""/></span>
+						<span><img src={require("../../img/@temp_goods.jpg")} width="23" height="23" alt=""/></span>
 					</a>
 				</li>
 			</ul>

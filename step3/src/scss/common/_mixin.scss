@@ -2,13 +2,21 @@
 	-webkit-transform:translate($x, $y);
 	transform:translate($x, $y);
 }
-
 @mixin ellipsis{
 	overflow:hidden;
 	text-overflow:ellipsis;
 	white-space:nowrap;
 }
-
+@mixin clampNum ($line) {
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-webkit-line-clamp:$line;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	word-wrap:break-word;
+}
 @mixin dummy{
 	display:inline-block;
 	overflow:hidden;
@@ -23,7 +31,10 @@
 		content:'';
 	}
 }
-
+@mixin box($type:border-box) {
+  -webkit-box-sizing:$type;
+  box-sizing:$type;
+}
 @mixin rnded ($rndValue) {
   -webkit-border-top-left-radius:$rndValue;
   -webkit-border-top-right-radius:$rndValue;
@@ -34,7 +45,6 @@
 	border-bottom-left-radius:$rndValue;
 	border-bottom-right-radius:$rndValue;
 }
-
 @mixin u_tb{
 	display:table;
 	width:100%;
@@ -43,12 +53,35 @@
 @mixin u_td{
 	display:table-cell;
 }
-
-
+@mixin fn_valign{
+	font-size:0;text-align:center;
+	&:after{
+		@include dummy;
+	}
+	img{
+		max-width:100%;height:auto;max-height:100%;vertical-align:middle;
+	}
+}
 @mixin sp_navi{
   display:inline-block;
   overflow:hidden;
-  background:url('../../img/sp_navi.png') no-repeat;
+  background:url('http://dev-markup.cjmall.com/webjars/ec-markup-common/dist/page-cjmall-mobile/others/img/common/cjmall/m/sp_navi.png') no-repeat;
   -webkit-background-size:166px auto;
-          background-size:166px auto;
+  background-size:166px auto;
+}
+@mixin sp_bt_x{
+  overflow:hidden;
+  display:inline-block;
+  background-repeat:no-repeat;
+	background-image:url('http://dev-markup.cjmall.com/webjars/ec-markup-common/dist/page-cjmall-mobile/others/img/common/cjmall/m/sp_bt_x.png');
+	-webkit-background-size:82px auto;
+	background-size:82px auto;
+}
+@mixin sp_ico_fn{
+  overflow:hidden;
+  display:inline-block;
+  background-repeat:no-repeat;
+	background-image:url('http://dev-markup.cjmall.com/webjars/ec-markup-common/dist/page-cjmall-mobile/others/img/common/cjmall/m/sp_ico_fn.png');
+	-webkit-background-size:62px auto;
+	background-size:62px auto;
 }

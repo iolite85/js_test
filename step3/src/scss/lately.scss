@@ -1,0 +1,159 @@
+@import "./common/_mixin";
+@import "./common/_variable";
+@import "./common/common";
+
+// 히스토리 리스트 영역
+.wrap_lately {
+  line-height:1.35;background:$white;
+  .box_zm {
+    background-color:$white;padding:0 1.2rem;clear:both;
+  }
+}
+// 히스토리 리스트 옵션 설정
+.box_option {
+  overflow:hidden;height:4.5rem;padding:0 1.1rem 0 1.2rem;line-height:4.3rem;background-color:$smoke1;
+  .num_count {
+    display:inline-block;font-size:1.3rem;color:$dark;vertical-align:middle;
+  }
+  .piece_total {
+    display:inline-block;font-size:1.3rem;color:$dark;vertical-align:middle;
+    .num {font-size:1.3rem;}
+  }
+  .option_area {
+    float:right;height:4.5rem;
+    .chkbx_only_prd {
+      label {font-size: 1.4rem;}
+      & + .btn_del:before {
+        position:absolute;top:-1px;left:0;width:1px;height:21px;background-color:$silver;content:'';
+      }
+    }
+    .btn_del {
+      position:relative;margin-left:.6rem;padding-left:1.1rem;font-size:1.4rem;color:$black;
+      & + .link_choice:before {
+        position:absolute;top:-1px;left:0;width:1px;height:21px;background-color:$silver;content:'';
+      }
+    }
+  }
+}
+
+.lately_product {
+  position:relative;background-color:$white;
+  &:after {
+    position:absolute;bottom:0;left:2.5rem;width:1px;height:100%;background-color:$gray1;content:'';
+  }
+}
+.item_lately {
+  position:relative;margin-left:2.5rem;padding:0;border-bottom:1px solid $smoke2;
+  &:only-child,&:last-child{ border-bottom:none;}
+  .cont_date {
+    position:absolute;top:1.3rem;left:-1.5rem;width:3.1rem;height:3.1rem;font-size:1rem;line-height:3.2rem;background-color:$darkgray1;color:$white;text-align:center;z-index:10;
+    @include rnded(50%);
+  }
+  .cont_date2 {
+    top:4.8rem;
+    @extend .cont_date;
+  }
+}
+.list_chu_prod {
+  overflow:visible;
+  li {
+    position:relative;margin:0;padding:1.4rem 3.3rem 1.4rem 2.6rem;border-top:1px solid $smoke2;border-bottom:0;
+    @include clearfix;
+    &:first-child {border-top:0;}
+    a {
+      display:block;position:relative;
+    }
+    .btn_del {
+      position:absolute;top:1.4rem;right:1rem;width:2.3rem;height:2.3rem;
+      .ic2_14 {
+        overflow:hidden;width:14px;height:14px;margin-top:.3rem;font-size:0;line-height:0;background-position:-52px -38px;text-indent:-9999px;vertical-align:top;
+        @include sp_bt_x;
+      }
+    }
+    .btn_choice {
+      position:absolute;bottom:1rem;right:1.1rem;width:2.5rem;height:2.5rem;
+      .ico_heart {
+        overflow:hidden;width:19px;height:17px;font-size:0;line-height:0;background-position:0 -410px;text-indent:-9999px;vertical-align:top;
+        @include sp_ico_fn;
+      }
+      &.selected {
+        .ico_heart {background-position:-20px -410px;}
+      }
+    }
+  }
+
+  // 이미지 타입
+  .link_thumb {
+    position:relative;float:left;width:11.3rem;height:11.3rem;margin-right:1.2rem;
+    @include fn_valign;
+    .frame_g {
+      position:absolute;top:0;left:0;width:100%;height:100%;font-size:1.6rem;line-height:1.15;background-color:rgba(0,0,0,0.5);color:$white;text-align:center;
+      @include box;
+    }
+  }
+  li.sold_out {
+    .frame_g {padding-top:4.1rem;}
+  }
+  li.sell_end {
+    .tit_prod {color:$darkgray1;}
+    .frame_g {padding-top:3.2rem;}
+  }
+  .info_thumb {
+    overflow:hidden;
+    .tit_prod {
+      display:block;margin:.3rem 0 0;font-weight:normal;font-size:1.6rem;color:$dark;
+    }
+    .link_tit {
+      display:block;width:100%;
+      @include clampNum(2);
+    }
+    .txt_sort {
+      display:block;margin:.8rem 0 0 .1rem;font-size:1.2rem;
+      & + .txt_price {margin-top:-.3rem;}
+    }
+    .txt_price {
+      display:block;margin-top:.3rem;font-size:1.9rem;color:$black;
+      .num {font-weight:bold;vertical-align:-1px;}
+      .txt {display:inline-block;margin:0 0 0 .1rem;font-size:1.3rem;}
+    }
+  }
+
+  // 플래그 타입
+  li.lately_chk {
+    a {
+      padding-left:6.5rem;white-space:nowrap;
+      &:after {
+          display:inline-block;width:0;height:100%;vertical-align:middle;content:'';
+      }
+    }
+    .ico_mark {
+      position:absolute;top:50%;left:0;width:5.8rem;height:2.3rem;border:1px solid #7fd4ef;font-size:1.3rem;line-height:2.3rem;color:$point;text-align:center;
+      @include midCenterTransform(0,-50%);
+      @include rnded(1.2rem);
+      @include box;
+    }
+    .ico_video {
+      position:absolute;top:50%;left:0;width:5.8rem;height:2.3rem;background:$point;border:1px solid $point;font-size:1.3rem;line-height:2.3rem;color:$white;text-align:center;
+      @include midCenterTransform(0,-50%);
+      @include rnded(1.2rem);
+      @include box;
+      &:before {
+        display:inline-block;content:'';background-position:-22px -391px;width:9px;height:10px;margin-right:.2rem;
+        @include sp_ico_fn;
+      }
+    }
+    .txt_chk {
+      display:inline-block;vertical-align:middle;white-space:normal;
+    }
+    .link_tit{
+      font-weight:normal;font-size:1.6rem;color:$dark;
+      @include clampNum(2);
+    }
+    & + .list_chu_prod {
+      li:first-child {
+        padding-top:1.2rem;border-top:1px solid $smoke2;
+      }
+    }
+    .btn_del {top:50%;margin-top:-1.2rem}
+  }
+}
